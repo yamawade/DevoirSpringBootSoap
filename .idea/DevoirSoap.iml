@@ -3,6 +3,7 @@
   <component name="AdditionalModuleElements">
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/DevoirSoap/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/DevoirSoap/target/generated-sources" isTestSource="false" />
     </content>
   </component>
 </module>

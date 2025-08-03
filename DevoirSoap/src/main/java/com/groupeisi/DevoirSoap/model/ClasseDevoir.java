@@ -1,52 +1,50 @@
 package com.groupeisi.DevoirSoap.model;
 
-import jakarta.persistence.*;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.*;
-
-@Entity
+/**
+ * Java class for classeDevoir complex type.
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "classeDevoir", propOrder = {
+        "id",
+        "className",
+        "description"
+})
 public class ClasseDevoir {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
 
-    private String className;
-    private String description;
+    protected int id;
 
-    @ManyToOne
-    @JoinColumn(name = "sector_id")
-    private Sector sector;
+    @XmlElement(required = true)
+    protected String className;
 
-    public Long getId() {
+    @XmlElement(required = true)
+    protected String description;
+
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(int value) {
+        this.id = value;
     }
 
     public String getClassName() {
         return className;
     }
 
-    public void setClassName(String className) {
-        this.className = className;
+    public void setClassName(String value) {
+        this.className = value;
     }
 
     public String getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Sector getSector() {
-        return sector;
-    }
-
-    public void setSector(Sector sector) {
-        this.sector = sector;
+    public void setDescription(String value) {
+        this.description = value;
     }
 }

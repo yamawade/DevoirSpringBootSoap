@@ -1,43 +1,38 @@
 package com.groupeisi.DevoirSoap.model;
 
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
 
-import java.util.List;
-import jakarta.persistence.*;
-
-
-@Entity
+/**
+ * Java class for sector complex type.
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "sector", propOrder = {
+        "id",
+        "name"
+})
 public class Sector {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
 
-    private String name;
+    protected int id;
 
-    @OneToMany(mappedBy = "sector", cascade = CascadeType.ALL)
-    private List<ClasseDevoir> classes;
+    @XmlElement(required = true)
+    protected String name;
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(int value) {
+        this.id = value;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public List<ClasseDevoir> getClasses() {
-        return classes;
-    }
-
-    public void setClasses(List<ClasseDevoir> classes) {
-        this.classes = classes;
+    public void setName(String value) {
+        this.name = value;
     }
 }
-
